@@ -1,0 +1,36 @@
+{
+    "name": "rrbrr/tlog",
+    "keywords": ["thinkphp", "log"],
+    "description": "An log library in ThinkPHP 6. ",
+    "authors": [
+        {
+            "name": "caoygx",
+            "email": "caoygx@qq.com"
+        }
+    ],
+    "license": "Apache-2.0",
+    "require": {
+    	"php": ">=7.1.0",
+        "topthink/framework": "^6.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "tlog\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+          "tlog\\tests\\": "tests/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "extra": {
+        "think": {
+            "services": [
+                "tlog\\TauthzService"
+            ]
+        }
+    }
+}
