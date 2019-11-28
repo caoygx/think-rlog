@@ -1,9 +1,9 @@
 <h1 align="center">
-    ThinkPHP 6.0 Authorization
+    ThinkPHP 6.0 rlog
 </h1>
 
 <p align="center">
-	<strong>Think-authz 是一个专为ThinkPHP6.0打造的授权（角色和权限控制）工具</strong>    
+	<strong>think-rlog 是一个专为ThinkPHP6.0打造的请求日志记录工具</strong>    
 </p>
 
 
