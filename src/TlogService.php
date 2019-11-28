@@ -19,25 +19,6 @@ class TlogService extends Service
     {
         // 注册数据迁移服务
         //$this->app->register(\think\migration\Service::class);
-
-        // 绑定 Casbin决策器
-        /*$this->app->bind('enforcer', function () {
-            $default = $this->app->config->get("tauthz.default");
-
-            $config = $this->app->config->get("tauthz.enforcers.".$default);
-            $adapter = $config['adapter'];
-
-            $configType = $config['model']['config_type'];
-
-            $model = new Model();
-            if ('file' == $configType) {
-                $model->loadModel($config['model']['config_file_path']);
-            } elseif ('text' == $configType) {
-                $model->loadModel($config['model']['config_text']);
-            }
-
-            return new Enforcer($model, app($adapter), $this->app->config->get("tauthz.log.enabled", false));
-        });*/
     }
 
     /**
@@ -47,23 +28,7 @@ class TlogService extends Service
      */
     public function boot()
     {
-        //$this->mergeConfigFrom(__DIR__ . '/../config/tauthz.php', 'tauthz');
-
-
         $this->commands(['tlog:publish' => Publish::class]);
     }
 
-    /**
-     * Merge the given configuration with the existing configuration.
-     *
-     * @param  string  $path
-     * @param  string  $key
-     * @return void
-     */
-    protected function mergeConfigFrom(string $path, string $key)
-    {
-        $config = $this->app->config->get($key, []);
-
-        $this->app->config->set(array_merge(require $path, $config), $key);
-    }
 }

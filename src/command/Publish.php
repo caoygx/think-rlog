@@ -30,7 +30,7 @@ class Publish extends Command
      */
     protected function execute(Input $input, Output $output)
     {
-        echo '执行命令';
+        echo "开始执行建表命令 \n";
         $default = config('database.default');
         $config = config("database.connections.{$default}");
         $prefix = $config['prefix'];
@@ -78,6 +78,7 @@ CREATE TABLE `{$prefix}log_request` (
         ";
         Db::query($sql);
 
+        echo "建表结束 \n";
     }
 }
 
