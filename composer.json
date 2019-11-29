@@ -30,7 +30,7 @@
     "extra": {
         "think": {
             "services": [
-                "tlog\\TauthzService"
+                "tlog\\TlogService"
             ]
         }
     }

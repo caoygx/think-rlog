@@ -47,6 +47,14 @@ php think tlog:publish
 
 ```
 
+## 其它
+配置文件 app.php
+[
+    'rlog'=>[
+        'white_list'=>'127.0.0.1','192.168.1.8' //指定需要记录请求信息的ip
+    ]
+] 
+
 
 
 
