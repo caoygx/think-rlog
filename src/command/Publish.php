@@ -71,6 +71,7 @@ CREATE TABLE `{$prefix}log_request` (
   `method` char(6) NOT NULL DEFAULT '' COMMENT '请求方式',
   `cookie` varchar(1000) NOT NULL DEFAULT '' COMMENT 'cookie|0',
   `response` longtext CHARACTER SET utf8mb4 COMMENT '返回内容|0',
+  `sql` longtext CHARACTER SET utf8mb4 COMMENT '执行的sql|0',
   `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间|0',
   `rinse_status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '数据清洗状态',
   PRIMARY KEY (`id`)

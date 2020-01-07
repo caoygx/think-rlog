@@ -3,11 +3,13 @@
 namespace tlog\listener;
 
 use think\facade\Db;
+use think\facade\Request;
 
 class WriteRequestLog
 {
     public function handle($event)
     {
+        if(Request::isCli()) return;
         if(config('app.rlog.disable')) return;
 
         $ipWhiteList    = config('app.rlog.white_list',[]);//['127.0.0.1', '192.168.16.96', '127.0.0.1', '192.168.16.118'];
@@ -15,6 +17,8 @@ class WriteRequestLog
         $logId = Db::name('log_request')->insertGetId($data);
 
         //header("logId: $logId");
+        //config('app.logId',$logId);
+        cache('logId',$logId);
         $dir = app()->getRuntimePath().'/db_log';
         file_exists($dir) || mkdir($dir,0777,true);
 
