@@ -12,9 +12,10 @@ class WriteRequestLog
 
         $ipWhiteList    = config('app.rlog.white_list',[]);//['127.0.0.1', '192.168.16.96', '127.0.0.1', '192.168.16.118'];
         $data = get_http_request_data($ipWhiteList);
+        if(!is_array($data)) return;
         $logId = Db::name('log_request')->insertGetId($data);
 
-        //header("logId: $logId");
+        //header("Log-Id: $logId");
         $dir = app()->getRuntimePath().'/db_log';
         file_exists($dir) || mkdir($dir,0777,true);
 
