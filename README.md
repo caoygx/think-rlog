@@ -15,7 +15,22 @@
 composer require rbrr/think-rlog
 ```
 
-2. 注册服务，在应用的全局公共文件service.php中加入：
+
+2. 添加事件监听,在应用全局事件文件event.php中加入
+
+```php
+
+    'listen' => [
+        'AppInit'     => ['tlog\listener\WriteRequestLog'],
+        'HttpRun'     => [],
+        'HttpEnd'     => ['tlog\listener\WriteResponseLog'],
+    ]
+
+```
+
+
+如果没有建立日志表，可以手工执行命令
+1. 注册服务，在应用的全局公共文件service.php中加入：
 
 ```php
 return [
@@ -25,27 +40,13 @@ return [
 ];
 ```
 
-3. 建立日志存储表：
+2. 建立日志存储表：
 
 ```
 php think tlog:publish
 ```
 
 这将自动生成 `log_request` 和 `log_curl` 表。
-
-
-
-4. 添加事件监听,在应用全局事件文件event.php中加入
-
-```php
-
-    'listen' => [
-        'AppInit' => [
-            'tlog\listener\WriteRequestLog'
-        ],
-    ]
-
-```
 
 ## 其它
 配置文件 app.php
