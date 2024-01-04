@@ -48,8 +48,9 @@ php think tlog:publish
 
 这将自动生成 `log_request` 和 `log_curl` 表。
 
-## 其它
-配置文件 app.php
+#### 如果只想某些ip请求才记录日志，可以指定白名单ip
+
+在应用的配置文件 app.php 中加入
 [
     'rlog'=>[
         'white_list'=>'127.0.0.1','192.168.1.8' //指定需要记录请求信息的ip
@@ -57,5 +58,5 @@ php think tlog:publish
 ] 
 
 
-
+![预览效果](preview.png)
 
