@@ -12,7 +12,7 @@
 1. 使用`composer`安装库：
 
 ```
-composer require rrbrr/tlog
+composer require rbrr/think-rlog
 ```
 
 2. 注册服务，在应用的全局公共文件service.php中加入：
