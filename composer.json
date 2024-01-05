@@ -11,7 +11,7 @@
     "license": "Apache-2.0",
     "require": {
     	"php": ">=7.1.0",
-        "topthink/framework": "^6.0.0",
+        "topthink/framework": ">=6.0.0",
         "rrbrr/rlog": "^1.0.0"
     },
     "autoload": {
