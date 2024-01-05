@@ -30,7 +30,16 @@ composer require rbrr/think-rlog
 
 
 如果没有建立日志表，可以手工执行命令
-1. 注册服务，在应用的全局公共文件service.php中加入：
+
+```
+php think tlog:publish
+```
+
+这将自动生成 `log_request` 和 `log_curl` 表。
+
+如果没有这个命令可以尝试手工注册下面的服务
+
+在应用的全局公共文件service.php中加入：
 
 ```php
 return [
@@ -40,13 +49,6 @@ return [
 ];
 ```
 
-2. 建立日志存储表：
-
-```
-php think tlog:publish
-```
-
-这将自动生成 `log_request` 和 `log_curl` 表。
 
 #### 如果只想某些ip请求才记录日志，可以指定白名单ip
 
