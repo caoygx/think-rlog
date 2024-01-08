@@ -1,10 +1,16 @@
 <h1 align="center">
-    ThinkPHP 6.0 rlog
+    ThinkPHP  rlog
 </h1>
 
 <p align="center">
-	<strong>think-rlog 是一个专为ThinkPHP6.0打造的请求日志记录工具</strong>    
+	<strong>think-rlog 是个新项目上手神器，对于入库新公司的项目或二开项目时，不了解业务数据逻辑。
+可以使用它记录所有请求信息，响应信息，以及执行的sql语句。</strong>    
 </p>
+
+
+
+![预览效果](preview.png)
+
 
 
 ## 使用方法
@@ -58,7 +64,3 @@ return [
         'white_list'=>'127.0.0.1','192.168.1.8' //指定需要记录请求信息的ip
     ]
 ] 
-
-
-![预览效果](preview.png)
-
