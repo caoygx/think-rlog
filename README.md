@@ -9,7 +9,8 @@
 
 
 
-![预览效果](preview.png)
+![ijiangtao](https://github.com/caoygx/think-rlog/blob/master/preview.png?raw=true)
+
 
 
 
